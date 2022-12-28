@@ -9,9 +9,11 @@ public class Program
         var pagamentoBoleto = new PagamentoBoleto();
         pagamentoBoleto.Pagar();
         pagamentoBoleto.VerVencimento(DateTime.Now);
+        pagamentoBoleto.CodigoDeBarras = "123456";
 
         Console.Clear();
         Console.WriteLine(pagamentoBoleto.VerVencimento(DateTime.Now));
+        Console.WriteLine(pagamentoBoleto.CodigoDeBarras);
     }
 
     public class Pagamento
@@ -26,6 +28,16 @@ public class Program
 
     internal class PagamentoBoleto : Pagamento
     {
+        public int ValorBoleto { get; set; }
+
+        private string _codigoDeBarras;
+
+        public string CodigoDeBarras
+        {
+            get { return _codigoDeBarras; }
+            set { _codigoDeBarras = value; }
+        }
+
         public override void Pagar()
         {
             base.Pagar();
