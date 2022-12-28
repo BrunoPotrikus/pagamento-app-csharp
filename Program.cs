@@ -8,24 +8,33 @@ public class Program
     {
         var pagamentoBoleto = new PagamentoBoleto();
         pagamentoBoleto.Pagar();
-        pagamentoBoleto.Vencimento = DateTime.Now;
+        pagamentoBoleto.VerVencimento(DateTime.Now);
 
         Console.Clear();
-        Console.WriteLine(pagamentoBoleto.Vencimento);
+        Console.WriteLine(pagamentoBoleto.VerVencimento(DateTime.Now));
     }
 
-    class Pagamento
+    public class Pagamento
     {
-        public DateTime Vencimento;
+        protected DateTime Vencimento;
 
-        public void Pagar()
+        public virtual void Pagar()
         {
            
         }
     }
 
-    class PagamentoBoleto : Pagamento
+    internal class PagamentoBoleto : Pagamento
     {
+        public override void Pagar()
+        {
+            base.Pagar();
+        }
 
+        public DateTime VerVencimento(DateTime vencimento)
+        {
+            base.Vencimento = vencimento;
+            return base.Vencimento;
+        }
     }
 }
