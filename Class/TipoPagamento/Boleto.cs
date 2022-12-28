@@ -1,12 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using devPoo.BaseClass;
 
 namespace devPoo.Class.TipoPagamento
 {
-    internal class Class1
+    internal class Boleto : Pagamento
     {
+        public int ValorBoleto { get; set; }
+
+        private string _codigoDeBarras;
+
+        public string CodigoDeBarras
+        {
+            get { return _codigoDeBarras; }
+            set { _codigoDeBarras = value; }
+        }
+
+        public override void Pagar()
+        {
+            base.Pagar();
+        }
+
+        public DateTime VerVencimento(DateTime vencimento)
+        {
+            base.Vencimento = vencimento;
+            return base.Vencimento;
+        }
     }
 }
