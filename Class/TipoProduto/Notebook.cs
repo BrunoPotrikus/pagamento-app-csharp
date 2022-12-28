@@ -1,9 +1,9 @@
 ﻿using System;
 using devPoo.BaseClass;
 
-namespace devPoo.Class
+namespace devPoo.Class.TipoProduto
 {
-    internal class Notebook : Produto
+    public class Notebook : Produto
     {
         public string Processador { get; set; }
         public string MemoriaRam { get; set; }

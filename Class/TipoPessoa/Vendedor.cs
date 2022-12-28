@@ -1,9 +1,9 @@
 ﻿using System;
 using devPoo.BaseClass;
 
-namespace devPoo.Class
+namespace devPoo.Class.TipoPessoa
 {
-    internal class Vendedor : Pessoa
+    public class Vendedor : Pessoa
     {
         public void Vender()
         {

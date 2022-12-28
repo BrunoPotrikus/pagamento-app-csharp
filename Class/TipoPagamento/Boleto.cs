@@ -3,7 +3,7 @@ using devPoo.BaseClass;
 
 namespace devPoo.Class.TipoPagamento
 {
-    internal class Boleto : Pagamento
+    public class Boleto : Pagamento
     {
         public int ValorBoleto { get; set; }
 

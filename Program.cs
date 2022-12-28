@@ -8,13 +8,15 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        var pagamentoBoleto = new Boleto();
-        pagamentoBoleto.Pagar();
-        pagamentoBoleto.VerVencimento(DateTime.Now);
-        pagamentoBoleto.CodigoDeBarras = "123456";
+        using (var pagamentoBoleto = new Boleto())
+        {
+            pagamentoBoleto.Pagar();
+            pagamentoBoleto.VerVencimento(DateTime.Now);
+            pagamentoBoleto.CodigoDeBarras = "123456";
 
-        Console.Clear();
-        Console.WriteLine(pagamentoBoleto.VerVencimento(DateTime.Now));
-        Console.WriteLine(pagamentoBoleto.CodigoDeBarras);
+            Console.Clear();
+            Console.WriteLine(pagamentoBoleto.VerVencimento(DateTime.Now));
+            Console.WriteLine(pagamentoBoleto.CodigoDeBarras);
+        }
     }
 }

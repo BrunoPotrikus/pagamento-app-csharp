@@ -1,8 +1,9 @@
-﻿using System;
+﻿using devPoo.Interfaces;
+using System;
 
 namespace devPoo.BaseClass
 {
-    internal class Produto
+    public class Produto : IProduto
     {
         public int Id { get; set; }
         public string Nome { get; set; }
