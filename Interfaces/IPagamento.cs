@@ -10,9 +10,6 @@ namespace devPoo.Interfaces
     {
         DateTime Vencimento { get; set; }
         double Valor { get; set; }
-        void Pagar()
-        {
-
-        }
+        void Pagar(DateTime dataPagamento);
     }
 }

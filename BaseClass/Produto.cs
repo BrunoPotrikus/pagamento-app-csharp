@@ -3,7 +3,7 @@ using System;
 
 namespace devPoo.BaseClass
 {
-    public class Produto : IProduto
+    public abstract class Produto : IProduto
     {
         public int Id { get; set; }
         public string Nome { get; set; }

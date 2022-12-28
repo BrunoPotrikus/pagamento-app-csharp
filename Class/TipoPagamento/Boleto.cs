@@ -15,11 +15,6 @@ namespace devPoo.Class.TipoPagamento
             set { _codigoDeBarras = value; }
         }
 
-        public override void Pagar()
-        {
-            base.Pagar();
-        }
-
         public DateTime VerVencimento(DateTime vencimento)
         {
             base.Vencimento = vencimento;
