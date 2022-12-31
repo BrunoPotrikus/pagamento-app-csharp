@@ -33,6 +33,22 @@ public class Program
             // Removendo elemento da lista
             listaPagamentosBoleto.Remove(pagamentoBoleto);
 
+            // Pegando e pulando quantidade específica de itens da lista
+            foreach(var item in listaPagamentosBoleto.Skip(1).Take(3))
+            {
+                Console.WriteLine($"Sub lista: {item.CodigoDeBarras}");
+            }
+
+            // Convertendo listas
+            IEnumerable<Boleto> novaListaPagamentosBoleto = new List<Boleto>();
+            novaListaPagamentosBoleto.ToList();
+
+            // Convertendo para Enumerable
+            var enumerableLista = novaListaPagamentosBoleto.AsEnumerable();
+
+            // Convertendo para array
+            var novalistaArray = novaListaPagamentosBoleto.ToArray();
+ 
             Console.WriteLine(pagamentoBoleto.VerVencimento(DateTime.Now));
             Console.WriteLine(pagamentoBoleto.CodigoDeBarras);
             Console.WriteLine(exists);
