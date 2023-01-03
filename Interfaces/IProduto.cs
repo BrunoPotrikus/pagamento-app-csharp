@@ -8,7 +8,7 @@ namespace devPoo.Interfaces
 {
     internal interface IProduto
     {
-        int Id { get; set; }
+        Guid Id { get; set; }
         string Nome { get; set; }
         string Categoria { get; set; }
         double Preco { get; set; }

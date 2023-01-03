@@ -8,7 +8,7 @@ namespace devPoo.Interfaces
 {
     public interface IPessoa
     {
-        int Id { get; set; }
+        Guid Id { get; set; }
         string Nome { get; set; }
     }
 }

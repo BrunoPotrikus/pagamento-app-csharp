@@ -5,7 +5,8 @@ namespace devPoo.Class.TipoPessoa
 {
     public class Vendedor : Pessoa
     {
-        public void Vender()
+        public Vendedor(string nome)
+            : base(nome)
         {
 
         }

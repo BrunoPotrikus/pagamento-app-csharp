@@ -5,7 +5,12 @@ namespace devPoo.BaseClass
 {
     public abstract class Pessoa : IPessoa
     {
-        public int Id { get; set ; }
+        protected Pessoa(string nome) 
+        {
+            Id = Guid.NewGuid();
+            Nome = nome;
+        }
+        public Guid Id { get; set ; }
         public string Nome { get; set; }
     }
 }

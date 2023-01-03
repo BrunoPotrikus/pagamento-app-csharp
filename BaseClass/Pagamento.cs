@@ -3,7 +3,7 @@ using System;
 
 namespace devPoo.BaseClass
 {
-    public abstract class Pagamento : IPagamento, IDisposable
+    public abstract class Pagamento : IPagamento
     {
         public DateTime Vencimento { get; set; }
         public double Valor { get; set; }
@@ -18,11 +18,6 @@ namespace devPoo.BaseClass
             {
                 Console.WriteLine("Aguarde...processando pagamento.");
             }
-        }
-
-        public void Dispose()
-        {
-            Console.WriteLine("Pagamento realizado com sucesso!");
         }
     }
 }
