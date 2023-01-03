@@ -6,6 +6,7 @@ using devPoo.BaseClass;
 using devPoo.Class.TipoPagamento;
 using devPoo.Class.TipoPessoa;
 using devPoo.Class.TipoProduto;
+using devPoo.Eventos;
 
 public class Program
 {
@@ -61,6 +62,7 @@ public class Program
         var produto = new Notebook(
                 "G-15",
                 "Gamer",
+                "Notebook",
                 9649.00,
                 "Dell",
                 "AMD Ryzen 7 5800H",
@@ -70,10 +72,31 @@ public class Program
             );
 
         var pagamento = new CartaoCredito(10);
-        var venda = new Venda<Notebook, CartaoCredito>(vendedor, cliente, produto, pagamento);
-        Console.WriteLine(venda.Cliente.Nome);
-        Console.WriteLine($"{venda.Produto.Marca} {venda.Produto.Nome}");
-        Console.WriteLine(venda.Pagamento.Valor);
-        Console.WriteLine(venda.Vendedor.Nome);
+
+        Menu(cliente, vendedor, produto, pagamento);
+    }
+
+    public static void Menu(Cliente cliente, Vendedor vendedor, Notebook produto, CartaoCredito pagamento)
+    {
+        Console.Clear();
+        Console.WriteLine("Escolha uma opção");
+        Console.WriteLine("1 - Vender");
+        Console.WriteLine("2 - Cadastrar produto");
+        Console.WriteLine("3 - Consultar produto");
+        Console.WriteLine("0 - Sair");
+        var opcao = short.Parse(Console.ReadLine());
+
+        ChamaEvento(opcao, produto, cliente, vendedor, pagamento);
+    }
+
+    public static void ChamaEvento(short opcao, Notebook produto, Cliente cliente = null, Vendedor vendedor = null, CartaoCredito pagamento = null)
+    {
+        switch (opcao)
+        {
+            case 1:
+                VenderProduto.DiaHoraVenda = DateTime.Now;
+                VenderProduto.Vender(produto, cliente, vendedor, pagamento);
+                break;
+        }
     }
 }

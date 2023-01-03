@@ -7,13 +7,14 @@ namespace devPoo.Class.TipoProduto
     {
         public Notebook(string nome, 
                         string categoria, 
+                        string tipo,
                         double preco, 
                         string marca, 
                         string processador, 
                         string memoriaRam, 
                         string armazenamento, 
                         string placaDeVideo)
-            : base(nome, categoria, preco, marca)
+            : base(nome, categoria, tipo, preco, marca)
         {
             Processador = processador;
             MemoriaRam = memoriaRam;
@@ -25,5 +26,13 @@ namespace devPoo.Class.TipoProduto
         public string MemoriaRam { get; set; }
         public string Armazenamento { get; set; }
         public string PlacaDeVideo { get; set; }
+
+        public String MostraProprieadesEspecificas()
+        {
+            return $"Processador: {Processador}\n" +
+                   $"Memória RAM: {MemoriaRam}\n" +
+                   $"Armazenamento: {Armazenamento}\n" +
+                   $"Placa de Vídeo: {PlacaDeVideo}";
+        }
     }
 }
