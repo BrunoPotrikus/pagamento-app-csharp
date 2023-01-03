@@ -22,12 +22,12 @@ namespace devPoo.Class.TipoProduto
             PlacaDeVideo = placaDeVideo;
         }
 
-        public string Processador { get; set; }
-        public string MemoriaRam { get; set; }
-        public string Armazenamento { get; set; }
-        public string PlacaDeVideo { get; set; }
+        public static string Processador { get; set; }
+        public static string MemoriaRam { get; set; }
+        public static string Armazenamento { get; set; }
+        public static string PlacaDeVideo { get; set; }
 
-        public String MostraProprieadesEspecificas()
+        public static String MostraProprieadesEspecificas()
         {
             return $"Processador: {Processador}\n" +
                    $"Memória RAM: {MemoriaRam}\n" +

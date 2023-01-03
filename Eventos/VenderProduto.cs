@@ -23,7 +23,7 @@ namespace devPoo.Eventos
             //}
 
             // Console.WriteLine($"Produto: {venda.NovoProduto.GetPropriedadesEspecificas(produto.GetType)}");
-            Console.WriteLine($"Especificações: {produto.GetType().Name}");
+            Console.WriteLine($"Especificações: {produto.GetPropriedadesEspecificas(produto.GetType().Name)}");
             Console.WriteLine($"Processador: {venda.NovoProduto}");
         }
     }

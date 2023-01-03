@@ -22,13 +22,14 @@ namespace devPoo.BaseClass
         public double Preco { get; set; }
         public string Marca { get; set; }
 
-        public void GetPropriedadesEspecificas(string tipo)
+        public String GetPropriedadesEspecificas(string tipo)
         {
             switch (tipo)
             {
                 case "Notebook":
-
-                    break;
+                    return Notebook.MostraProprieadesEspecificas();
+                default:
+                    return "Tipo nã existe";
             }
         }
     }
