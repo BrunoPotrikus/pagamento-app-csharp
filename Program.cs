@@ -58,9 +58,9 @@ public class Program
         //Console.WriteLine(listaPagamentosBoleto.Count);
         Console.Clear();
         var cliente = new Cliente("Bruno");
-        var vendedor = new Vendedor(null);
+        var vendedor = new Vendedor("José");
         var produto = new Notebook(
-                "G-15",
+                "G15",
                 "Gamer",
                 "Notebook",
                 9649.00,
@@ -71,9 +71,11 @@ public class Program
                 "NVIDIA GeForce® RTX 3060 6GB GDDR6"
             );
 
-        var pagamento = new CartaoCredito(10);
+        var pagamento = new CartaoCredito();
+        pagamento.Valor = 9500.00;
+        pagamento.QuantidadeParcelas = 10;
 
-        var venda = new VenderProduto();
+        // var venda = new VenderProduto();
 
         //venda.DiaHoraVenda = DateTime.Now;
         //venda.Vender(produto, cliente, null, pagamento);

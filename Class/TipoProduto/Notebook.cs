@@ -29,10 +29,10 @@ namespace devPoo.Class.TipoProduto
 
         public static String MostraProprieadesEspecificas()
         {
-            return $"Processador: {Processador}\n" +
-                   $"Memória RAM: {MemoriaRam}\n" +
-                   $"Armazenamento: {Armazenamento}\n" +
-                   $"Placa de Vídeo: {PlacaDeVideo}";
+            return $" Processador: {Processador}\n" +
+                   $" Memória RAM: {MemoriaRam}\n" +
+                   $" Armazenamento: {Armazenamento}\n" +
+                   $" Placa de Vídeo: {PlacaDeVideo}";
         }
     }
 }
