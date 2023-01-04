@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace devPoo.NotificationContext
+﻿namespace devPoo.NotificationContext
 {
     public abstract class Notificavel
     {
         public List<Notificacao> Notificacoes { get; set; }
+
+        public Notificavel()
+        {
+            Notificacoes = new List<Notificacao>();
+        }
 
         public void AddNotificacao(Notificacao notificacao)
         {
@@ -19,5 +18,7 @@ namespace devPoo.NotificationContext
         {
             Notificacoes.AddRange(notificacoes);
         }
+
+        public bool Invalido => Notificacoes.Any();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using devPoo.BaseClass;
+using devPoo.NotificationContext;
 
 namespace devPoo.Class.TipoPessoa
 {
@@ -7,7 +8,10 @@ namespace devPoo.Class.TipoPessoa
         public Cliente(string nome) 
             : base(nome)
         { 
-            
+            if (nome == null)
+            {
+                AddNotificacao(new Notificacao("Cliente", "Cliente não identificado"));
+            }
         }
     }
 }

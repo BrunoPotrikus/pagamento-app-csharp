@@ -58,7 +58,7 @@ public class Program
         //Console.WriteLine(listaPagamentosBoleto.Count);
         Console.Clear();
         var cliente = new Cliente("Bruno");
-        var vendedor = new Vendedor("José");
+        var vendedor = new Vendedor(null);
         var produto = new Notebook(
                 "G-15",
                 "Gamer",
@@ -73,10 +73,20 @@ public class Program
 
         var pagamento = new CartaoCredito(10);
 
-        Menu(cliente, vendedor, produto, pagamento);
+        var venda = new VenderProduto();
+
+        //venda.DiaHoraVenda = DateTime.Now;
+        //venda.Vender(produto, cliente, null, pagamento);
+        
+        //foreach(var notificacao in venda.Notificacoes)
+        //{
+        //    Console.WriteLine($"{notificacao.Propriedade} - {notificacao.Mensagem}");
+        //}
+
+        Menu(produto, cliente, vendedor,  pagamento);
     }
 
-    public static void Menu(Cliente cliente, Vendedor vendedor, Notebook produto, CartaoCredito pagamento)
+    public static void Menu( Notebook produto, Cliente cliente, Vendedor vendedor = null, CartaoCredito pagamento = null)
     {
         Console.Clear();
         Console.WriteLine("Escolha uma opção");
@@ -94,8 +104,9 @@ public class Program
         switch (opcao)
         {
             case 1:
-                VenderProduto.DiaHoraVenda = DateTime.Now;
-                VenderProduto.Vender(produto, cliente, vendedor, pagamento);
+                var venda = new VenderProduto();
+                venda.DiaHoraVenda = DateTime.Now;
+                venda.Vender(produto, cliente, vendedor, pagamento);
                 break;
         }
     }
